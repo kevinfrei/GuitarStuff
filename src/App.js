@@ -1,4 +1,7 @@
+// @flow
 import React from 'react';
+import { GuitarString } from './Fretboard';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,14 +13,42 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <GuitarString
+          hdr="e"
+          str={1}
+          vals={['F', '', 'G', '', 'A', '', 'B', 'C', '', 'D', '', 'E']}
+        />
+        <br />
+        <GuitarString
+          hdr="B"
+          str={2}
+          vals={['C', '', 'D', '', 'E', 'F', '', 'G', '', 'A', '', 'B']}
+        />
+        <br />
+        <GuitarString
+          hdr="G"
+          str={3}
+          vals={['', 'A', '', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G']}
+        />
+        <br />
+        <GuitarString
+          hdr="D"
+          str={4}
+          vals={['', 'E', 'F', '', 'G', '', 'A', '', 'B', 'C', '', 'D']}
+        />
+        <br />
+        <GuitarString
+          hdr="A"
+          str={5}
+          vals={['', 'B', 'C', '', 'D', '', 'E', 'F', '', 'G', '', 'A']}
+        />
+        <br />
+        <GuitarString
+          hdr="E"
+          str={6}
+          vals={['F', 'F#', 'G', '', 'A', '', 'B', 'C', '', 'D', '', 'E']}
+        />
+        <br />
       </header>
     </div>
   );
