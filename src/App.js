@@ -2,17 +2,12 @@
 import React from 'react';
 import { GuitarString } from './Fretboard';
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <GuitarString
           hdr="e"
           str={1}
@@ -46,7 +41,7 @@ function App() {
         <GuitarString
           hdr="E"
           str={6}
-          vals={['F', 'F#', 'G', '', 'A', '', 'B', 'C', '', 'D', '', 'E']}
+          vals={['F', '', 'G', '', 'A', '', 'B', 'C', '', 'D', '', 'E']}
         />
         <br />
       </header>
