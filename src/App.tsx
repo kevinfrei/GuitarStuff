@@ -1,13 +1,12 @@
-// @flow
-import React from 'react';
 import { GuitarString } from './Fretboard';
 
 import './App.css';
 
-function App() {
+export default function App(): JSX.Element {
   return (
     <div className="App">
       <header className="App-header">
+        <p>Here's a sample</p>
         <GuitarString
           hdr="e"
           str={1}
@@ -48,5 +47,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

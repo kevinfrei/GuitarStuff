@@ -1,17 +1,14 @@
-// @flow
+import { StringNames } from './GuitarTypes';
 
-import React from 'react';
-import type { StringNames } from './GuitarTypes';
-
-const SingleFret = ({
+export function SingleFret({
   contents,
   str,
-  withHeader
+  withHeader,
 }: {
-  contents: string,
-  str: StringNames,
-  withHeader?: string
-}) => {
+  contents: string;
+  str: StringNames;
+  withHeader?: string;
+}): JSX.Element {
   const spaceHeight = 15 - str;
   const header = withHeader ? withHeader : '';
   const center =
@@ -20,7 +17,7 @@ const SingleFret = ({
         style={{
           gridColumn: 2,
           gridRowStart: 2,
-          gridRowEnd: 4
+          gridRowEnd: 4,
         }}
       >
         {contents}
@@ -31,7 +28,7 @@ const SingleFret = ({
           gridColumn: 2,
           gridRow: 3,
           height: 2 * str,
-          backgroundColor: 'white'
+          backgroundColor: 'white',
         }}
       />
     );
@@ -43,14 +40,14 @@ const SingleFret = ({
         display: 'inline-grid',
         gridTemplateColumns: 'auto auto auto',
         gridTemplateRows: 'auto auto auto auto',
-        width: '140px'
+        width: '140px',
       }}
     >
       <div
         style={{
           gridRow: 1,
           gridColumnStart: 1,
-          gridColumnEnd: 4
+          gridColumnEnd: 4,
         }}
       >
         {header}
@@ -59,7 +56,7 @@ const SingleFret = ({
         style={{
           height: spaceHeight,
           gridRow: 2,
-          gridColumn: 1
+          gridColumn: 1,
         }}
       />
       <div
@@ -67,7 +64,7 @@ const SingleFret = ({
           gridRow: 3,
           gridColumn: 1,
           height: 2 * str,
-          backgroundColor: 'white'
+          backgroundColor: 'white',
         }}
       />
       {center}
@@ -76,7 +73,7 @@ const SingleFret = ({
           gridRow: 3,
           gridColumn: 3,
           height: 2 * str,
-          backgroundColor: 'white'
+          backgroundColor: 'white',
         }}
       />
       <div
@@ -84,23 +81,23 @@ const SingleFret = ({
           height: spaceHeight,
           gridRow: 4,
           gridColumnStart: 1,
-          gridColumnEnd: 4
+          gridColumnEnd: 4,
         }}
       />
     </span>
   );
-};
-const GuitarString = ({
+}
+export function GuitarString({
   hdr,
   str,
   vals,
-  hdrs
+  hdrs,
 }: {
-  hdr?: string,
-  str: StringNames,
-  vals: Array<string>,
-  hdrs?: Array<string>
-}) => {
+  hdr?: string;
+  str: StringNames;
+  vals: string[];
+  hdrs?: string[];
+}): JSX.Element {
   const frets = hdrs
     ? vals.map((v, i) => (
         <SingleFret key={i} contents={v} str={str} withHeader={hdrs[i]} />
@@ -111,13 +108,11 @@ const GuitarString = ({
       style={{
         display: 'inline-grid',
         gridTemplateColumns:
-          '50px auto auto auto auto auto auto auto auto auto auto auto auto'
+          '50px auto auto auto auto auto auto auto auto auto auto auto auto',
       }}
     >
       <span>{hdr ? hdr : ''}</span>
       {frets}
     </span>
   );
-};
-
-export { GuitarString, SingleFret };
+}
