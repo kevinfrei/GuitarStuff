@@ -2,8 +2,7 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+/.pnp.*
 
 # testing
 /coverage
@@ -23,3 +22,17 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 .tsbuildinfo
+
+# files for NPM
+/lib
+/dist
+
+# Yarn Integrity file
+.yarn-integrity
+.yarn/*
+.pnp.*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
